@@ -16,3 +16,14 @@ SYMBOLS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890 !?.'
 
 # Store encrypted/decrypted form.
 translated = ''
+
+for symbol in message:
+    # Note: Only symbols in SYMBOLS can be recognized
+    if symbol in SYMBOLS:
+        symbolIndex = SYMBOLS.find(symbol)
+
+        # Perform encryption/decryption:
+        if mode =='encrypt':
+            translateIndex = symbolIndex + key
+        elif mode == 'decrypt':
+            translateIndex = symbolIndex - key
