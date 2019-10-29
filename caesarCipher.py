@@ -27,3 +27,9 @@ for symbol in message:
             translateIndex = symbolIndex + key
         elif mode == 'decrypt':
             translateIndex = symbolIndex - key
+
+        # Handle wraparound, if needed:
+        if translateIndex >= len(SYMBOLS):
+            translateIndex = translateIndex - len(SYMBOLS)
+        elif translateIndex < 0:
+            translateIndex = translateIndex + len(SYMBOLS)
