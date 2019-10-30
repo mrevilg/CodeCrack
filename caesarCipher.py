@@ -2,14 +2,15 @@
 
 import pyperclip
 
-# The string/message to be encrypted/decrypted:
+# Select the string/message to be encrypted/decrypted:
 message = 'This is my secret message.'
+message = 'guv6Jv6Jz!J6rp5r7Jzr66ntrM'
 
 # The encryption key"
 key = 13
 
 # Wheather the program encrypts or decrypts:
-mode = 'encrypt' # Set to eiterh encrypt or decrypt.
+mode = 'decrypt' # Set to either encrypt or decrypt.
 
 # Every possible symbol that can be encrypted:
 SYMBOLS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890 !?.'
@@ -33,3 +34,12 @@ for symbol in message:
             translateIndex = translateIndex - len(SYMBOLS)
         elif translateIndex < 0:
             translateIndex = translateIndex + len(SYMBOLS)
+
+        translated = translated + SYMBOLS[translateIndex]
+    else:
+        # Append the symbol without encryption/decryption:
+        translated = translated + symbol
+
+# Output the translated string:
+print(translated)
+pyperclip.copy(translated)
