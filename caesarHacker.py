@@ -6,3 +6,8 @@ SYMBOLS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890 !?.'
 # Loop through every possible key:
 for key in range(len(SYMBOLS)):
     translated = ''
+
+    for symbol in message:
+        if symbol in SYMBOLS:
+            symbolIndex = SYMBOLS.find(symbol)
+            translatedIndex = symbolIndex - key
