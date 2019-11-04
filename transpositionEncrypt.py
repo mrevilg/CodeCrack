@@ -5,3 +5,13 @@ def main():
     myKey = 8
 
     ciphertext = encryptMessage(myKey, myMessage)
+
+    print(ciphertext + '|')
+
+    pyperclip.copy(ciphertext)
+
+def encryptMessage(key, message):
+    ciphertext = [''] * key
+
+    for column in range(key):
+        currentIndex = column
