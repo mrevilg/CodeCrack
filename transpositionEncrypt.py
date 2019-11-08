@@ -15,3 +15,11 @@ def encryptMessage(key, message):
 
     for column in range(key):
         currentIndex = column
+
+        # Keep looping until currentIndex excceds message length:
+        while currentIndex < len(message):
+            # Append column end to list:
+            ciphertext[column] += message[currentIndex]
+
+            # Move currentIndex over:
+            currentIndex += key
