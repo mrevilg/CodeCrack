@@ -23,3 +23,9 @@ def encryptMessage(key, message):
 
             # Move currentIndex over:
             currentIndex += key
+
+    # Convert list into string and return:
+    return ''.join(ciphertext)
+
+if __name__ == '__main__':
+    main()
