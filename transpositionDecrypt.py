@@ -9,3 +9,13 @@ def main():
     print(plaintext + '|')
 
     pyperclip.copy(plaintext)
+
+def decryptMessage(key, message):
+    numOfColumns = int(math.ceil(len(message) / float(key)))
+    numOfRows = key
+    numOfShadedBoxes = (numOfColumns * numOfRows) - len(message)
+    plaintext = [''] * numOfColumns
+
+    column = 0
+    row = 0
+    
