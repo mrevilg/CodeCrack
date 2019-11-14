@@ -4,7 +4,7 @@ def main():
     myMessage = 'Cenoonommstmme oo snnio. s s c'
     myKey = 8
 
-    plaintext = dectyptMessage(myKey, myMessage)
+    plaintext = decryptMessage(myKey, myMessage)
 
     print(plaintext + '|')
 
@@ -19,3 +19,15 @@ def decryptMessage(key, message):
     column = 0
     row = 0
     
+    for symbol in message:
+        plaintext[column] += symbol
+        column += 1 # Point to next column.
+        if (column == numOfColumns) or (column == numOfColumns - 1 and
+            row >= numOfRows - numOfShadedBoxes):
+            column = 0
+            row += 1
+    
+    return ''.join(plaintext)
+
+if __name__=='__main__':
+    main()
