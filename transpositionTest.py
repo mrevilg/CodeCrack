@@ -8,3 +8,5 @@ def main():
         message = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ' * random.randint(4,40)
 
         message = list(message)
+        random.shuffle(message)
+        message = ''.join(message)
