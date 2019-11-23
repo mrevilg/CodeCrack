@@ -10,3 +10,5 @@ def main():
         message = list(message)
         random.shuffle(message)
         message = ''.join(message)
+
+        print('Test #%s: "%s..."' % (i + 1, message[:50]))
