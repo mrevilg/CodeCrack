@@ -16,3 +16,7 @@ def main():
         for key in range(1, int(len(message)/2)):
             encrypted = transpositionEncrypt.encryptMessage(key, message)
             decrypted = transpositionDecrypt.decryptMessage(key, encrypted)
+
+            if message != decrypted:
+                print('Mismatch with key %s and message %s' %
+                (key, message))
