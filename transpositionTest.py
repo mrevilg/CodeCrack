@@ -20,3 +20,10 @@ def main():
             if message != decrypted:
                 print('Mismatch with key %s and message %s' %
                 (key, message))
+                print('Decrypted as: ' + decrypted)
+                sys.exit()
+        
+    print('Transposition cipher test passed.')
+
+if __name__ == '__main__':
+    main()
