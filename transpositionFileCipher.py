@@ -10,8 +10,8 @@ def main():
 
     if not os.path.exists(inputFilename):
         print('This file %s does not exist, hold for processing...'
-            % (inputFilename))
-            sys.exit()
+        % (inputFilename))
+        sys.exit()
 
     if os.path.exists(outputFilename):
         print('This will overwrite this file %s. (C)ontinue or (Q)uit' %
@@ -19,3 +19,9 @@ def main():
         response = input('> ')
         if not response.lower().startswith('c'):
             sys.exit()
+
+    fileObj = open(inputFilename)
+    content = fileObj.read()
+    fileObj.close()
+
+    print('%sing...' % (myMode.title()))
