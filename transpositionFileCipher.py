@@ -25,3 +25,11 @@ def main():
     fileObj.close()
 
     print('%sing...' % (myMode.title()))
+
+    startTime = time.time()
+    if myMode == 'encrypt':
+        translated = transpositionEncrypt.encryptMessage(myKey, content)
+    elif myMode == 'decrypted':
+        translated = transpositionDecrypt.decryptMessage(myKey, content)
+    totalTime = round(time.time() - startTime, 2)
+    print('%sion time: %s seconds' % (myMode.title(), totalTime))
