@@ -33,3 +33,14 @@ def main():
         translated = transpositionDecrypt.decryptMessage(myKey, content)
     totalTime = round(time.time() - startTime, 2)
     print('%sion time: %s seconds' % (myMode.title(), totalTime))
+
+    outputFileObj = open(outputFilename, 'w')
+    outputFileObj.write(translated)
+    outputFileObj.close()
+
+    print('Done %sing %s (%s characters).' % (myMode, inputFilename,
+        len(content)))
+    print('%sed file is %s.' % (myMode.title(), outputFilename))
+    
+if __name__ == '__main__':
+    main()
