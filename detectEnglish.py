@@ -12,3 +12,12 @@ def loadDictionary():
     return englishWords
 
 ENGLISH_WORDS = loadDictionary()
+
+
+def getEnglishCount(message):
+    message = message.upper()
+    message = removeNonLetters(message)
+    possibleWords = message.split()
+
+    if possibleWords == []:
+        return 0.0 # No words at all
