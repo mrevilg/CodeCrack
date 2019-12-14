@@ -34,3 +34,8 @@ def removeNonLetters(message):
         if symbol in LETTERS_AND_SPACE:
             lettersOnly.append(symbol)
     return ''.join(lettersOnly)
+
+def isEnglish(message, wordPercentage=20, letterPercentage=85):
+    # By Default 20% of words must exist, 85% of characters, not punct/numbers
+    wordsMatch = getEnglishCount(message) * 100 >= wordPercentage
+    numLetters = len(removeNonLetters(message))
