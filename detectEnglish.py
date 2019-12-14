@@ -39,3 +39,6 @@ def isEnglish(message, wordPercentage=20, letterPercentage=85):
     # By Default 20% of words must exist, 85% of characters, not punct/numbers
     wordsMatch = getEnglishCount(message) * 100 >= wordPercentage
     numLetters = len(removeNonLetters(message))
+    messageLettersPercentage = float(numLetters) / len(message) * 100
+    lettersMatch = messageLettersPercentage >= letterPercentage
+    return wordsMatch and lettersMatch
