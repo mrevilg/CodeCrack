@@ -27,3 +27,10 @@ def getEnglishCount(message):
         if word in ENGLISH_WORDS:
             matches += 1
     return float(matches) / len(possibleWords)
+
+def removeNonLetters(message):
+    lettersOnly = []
+    for symbol in message:
+        if symbol in LETTERS_AND_SPACE:
+            lettersOnly.append(symbol)
+    return ''.join(lettersOnly)
