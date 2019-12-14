@@ -21,3 +21,9 @@ def getEnglishCount(message):
 
     if possibleWords == []:
         return 0.0 # No words at all
+
+    matches = 0
+    for word in possibleWords:
+        if word in ENGLISH_WORDS:
+            matches += 1
+    return float(matches) / len(possibleWords)
