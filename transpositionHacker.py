@@ -11,3 +11,5 @@ def main():
       toesa- e a0m82e1w shcnth  ekh gaecnpeutaaieetgn iodhso d ro 
       hAe snrsfcegrt NCsLc b17m8aEheideikfr aBercaeu thllnrshicwsg 
       etriebruaisss  d iorr."""
+
+    hackedMessage = hackTransposition(myMessage)
