@@ -13,3 +13,10 @@ def main():
       etriebruaisss  d iorr."""
 
     hackedMessage = hackTransposition(myMessage)
+
+    if hackedMessage == None:
+      print('Failed to hack encryption.')
+    else:
+      print('Copying hacked message to clipboard:')
+      print(hackedMessage)
+      pyperclip.copy(hackedMessage)
