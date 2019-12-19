@@ -20,3 +20,6 @@ def main():
       print('Copying hacked message to clipboard:')
       print(hackedMessage)
       pyperclip.copy(hackedMessage)
+
+def hackTransposition(message):
+    print('Hacking...')
