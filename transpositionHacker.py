@@ -24,3 +24,6 @@ def main():
 def hackTransposition(message):
     print('Hacking...')
     print('(Press Ctrl-C (on Windows) or Ctrl-D (on macOS/Linux) to quit at any time.)')
+
+    for key in range(1, len(message)):
+      print('Trying key #%s...' % (key))
