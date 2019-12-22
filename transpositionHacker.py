@@ -35,4 +35,5 @@ def hackTransposition(message):
         print('Possible encryption hack:')
         print('Key %s: %s' % (key, decryptedText[:100]))
         print()
-        
+        print('Enter D if done, anything else to continue hacking:')
+        response = input('> ')
