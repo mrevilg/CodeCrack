@@ -33,3 +33,6 @@ def hackTransposition(message):
       if detectEnglish.isEnglish(decryptedText):
         print()
         print('Possible encryption hack:')
+        print('Key %s: %s' % (key, decryptedText[:100]))
+        print()
+        
