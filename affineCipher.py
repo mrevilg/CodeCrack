@@ -1,5 +1,5 @@
 
-import sys, pyperckip, cryptomath, random
+import sys, pyperclip, cryptomath, random
 SYMBOLS = """ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnop
             qrstuvwxyz1234567890 !?."""
 
@@ -11,5 +11,11 @@ def main():
     myMode = 'encrypt' # Set to either encrypt or decrypt.
 
     if myMode == 'encrypt':
-        translated = encryptedMessage(myKey, myMessage)
-    elif myMode == 'decrypt'
+        translated = encryptMessage(myKey, myMessage)
+    elif myMode == 'decrypt':
+        translated = decryptMessage(myKey, myMessage)
+    print
+    print
+    print
+    pyperclip.copy(translated)
+    print('Full %sed text to clipboard.' % (myMode))
