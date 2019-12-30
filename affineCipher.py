@@ -19,3 +19,8 @@ def main():
     print(translated)
     pyperclip.copy(translated)
     print('Full %sed text to clipboard.' % (myMode))
+
+def getKeyParts(key):
+    keyA = key // len (SYMBOLS)
+    keyB = key % len(SYMBOLS)
+    return(keyA, keyB)
