@@ -24,3 +24,10 @@ def getKeyParts(key):
     keyA = key // len (SYMBOLS)
     keyB = key % len(SYMBOLS)
     return(keyA, keyB)
+
+def checkKeys(keyA, keyB, mode):
+    if keyA == 1 and mode == 'encrypt':
+        sys.exit('Cipher is weak if A is 1. Choose another key.')
+    if keyB == 0 and mode == 'encrypt':
+        sys.exit('Cipher is weak if B is 0. Choose another key.')
+            
