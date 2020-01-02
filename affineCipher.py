@@ -30,4 +30,7 @@ def checkKeys(keyA, keyB, mode):
         sys.exit('Cipher is weak if A is 1. Choose another key.')
     if keyB == 0 and mode == 'encrypt':
         sys.exit('Cipher is weak if B is 0. Choose another key.')
+    if keyA < 0 or keyB < 0 or keyB > len(SYMBOLS) -1:
+        sys.exit('Key A must be greater than 0 and Key B must be between 0 and %s.'
+            % (len(SYMBOLS) - 1))
             
