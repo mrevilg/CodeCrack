@@ -34,7 +34,17 @@ def checkKeys(keyA, keyB, mode):
         sys.exit('Key A must be greater than 0 and Key B must be between 0 and %s.'
             % (len(SYMBOLS) - 1))
     if cryptomath.gcd(keyA, len(SYMBOLS)) != 1:
-        sys.exit('Key A(%s) and the symbol set size (%s) are
-            not relatively prime. Choose a different key.' % (keyA,
-            len(SYMBOLS)))
-            
+        sys.exit('Key A(%s) and the symbol set size (%s) are not relatively prime. Choose a different key.' % (keyA, len(SYMBOLS)))
+
+def encryptMessage(key, message):
+    keyA, keyB = getKeyParts(key)
+    checkKeys(keyA, keyB, 'encrypt')
+    ciphertext = ''
+    for symbol in message:
+        if symbol in SYMBOLS:
+            # Encrypt the symbol:
+            symbolIndex = SYMBOLS.find(symbol)
+            ciphertext += SYMBOLS[(symbolIndex * keyA + keyB) % len(SYMBOLS)]
+        else:
+            ciphertext += symbol # Append without encrypting.
+    return ciphertext         
