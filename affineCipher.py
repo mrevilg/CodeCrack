@@ -47,4 +47,11 @@ def encryptMessage(key, message):
             ciphertext += SYMBOLS[(symbolIndex * keyA + keyB) % len(SYMBOLS)]
         else:
             ciphertext += symbol # Append without encrypting.
-    return ciphertext         
+    return ciphertext   
+
+def decryptMessage(key, message):
+    keyA, keyB = getKeyParts(key)
+    checkKeys(keyA, keyB, 'decrypt')
+    plaintext = ''
+    modInverseOfKeyA = cryptomath.findModInverse(keyA, len(SYMBOLS))
+    
