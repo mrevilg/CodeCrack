@@ -55,3 +55,11 @@ def decryptMessage(key, message):
     plaintext = ''
     modInverseOfKeyA = cryptomath.findModInverse(keyA, len(SYMBOLS))
     
+    for symbol in message:
+        if symbol in SYMBOLS:
+            # Decrypt the symbol:
+            symbolIndex = SYMBOLS.find(symbol)
+            plaintext += SYMBOLS[(symbolIndex - keyB) * modInverseOfKeyA % len(SYMBOLS)]
+        else:
+            plaintext += symbol # Append without encrypting.
+    return plaintext 
