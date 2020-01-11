@@ -8,6 +8,11 @@ def main():
     <mMMjS'g{GjMMg9j{G'g"'gG'<3^MS'Sj<jguj'm'P^dm{'
     g{G3'%jMgjug{9'GPmG'gG'-m0'P^dm{LU'5&Mm{'_^xg{9"""
 
-    hackedMessage = hackAffice(myMessage)
+    hackedMessage = hackAffine(myMessage)
 
     if hackedMessage != None:
+        print('Copying hacked message to clipboard:')
+        print(hackedMessage)
+        pyperclip.copy(hackedMessage)
+    else:
+        print('Failed to hack encryption')
