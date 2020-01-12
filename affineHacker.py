@@ -16,3 +16,6 @@ def main():
         pyperclip.copy(hackedMessage)
     else:
         print('Failed to hack encryption')
+
+def hackAffine(message):
+    print('Hacking...')
