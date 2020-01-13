@@ -19,3 +19,4 @@ def main():
 
 def hackAffine(message):
     print('Hacking...')
+    print('(Press Ctrl-C or Ctrl-D to quit at any time.)')
