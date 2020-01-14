@@ -20,3 +20,9 @@ def main():
 def hackAffine(message):
     print('Hacking...')
     print('(Press Ctrl-C or Ctrl-D to quit at any time.)')
+
+    for key in range(len(affineCipher.SYMBOLS) ** 2):
+        keyA = affineCipher.getKeyParts(key)[0]
+        if cryptomath.gcd(keyA, len(affineCipher.SYMBOLS))  != 1:
+            continue
+        decryptedText = 
