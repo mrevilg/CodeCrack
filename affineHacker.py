@@ -25,4 +25,10 @@ def hackAffine(message):
         keyA = affineCipher.getKeyParts(key)[0]
         if cryptomath.gcd(keyA, len(affineCipher.SYMBOLS))  != 1:
             continue
-        decryptedText = 
+        decryptedText = affineCipher.decryptMessage(key, message)
+        if not SILENT_MODE:
+            print('Tried key %s... (%s)' % (keyA, decryptedText[:40]))
+
+        if detectEnglish.isEnglish(decryptedText):
+            print()
+            print('Possible encryption hack:')
