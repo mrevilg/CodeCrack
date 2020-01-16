@@ -32,3 +32,4 @@ def hackAffine(message):
         if detectEnglish.isEnglish(decryptedText):
             print()
             print('Possible encryption hack:')
+            print('Key: %s' % (key))
