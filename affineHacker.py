@@ -33,3 +33,15 @@ def hackAffine(message):
             print()
             print('Possible encryption hack:')
             print('Key: %s' % (key))
+            print('Decrypted message: ' + decryptedText[:200])
+            print()
+            print('Enter D for done, or press Enter to continue hacking:')
+            response = input('> ')
+
+            if response.strip().upper().startswith('D'):
+                return decryptedText
+    return None
+
+if __name__ == "__main__":
+    main()    
+        
