@@ -16,3 +16,5 @@ def main():
 
     if keyIsValid(myKey):
         sys.exit('There is an error in the key or symbol set.')
+    if myMode == 'encrypt':
+        translated = encryptMessage(myKey, myMessage)
