@@ -20,3 +20,9 @@ def main():
         translated = encryptMessage(myKey, myMessage)
     elif myMode == 'decrypt':
         translated = decryptMessage(myKey, myMessage)
+    print('Using key %s' % (myKey))
+    print('The %sed message is:' % (myMode))
+    print(translated)
+    pyperclip.copy(translated)
+    print()
+    print('This message has been copied to the clipboard.')
