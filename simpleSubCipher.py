@@ -26,3 +26,12 @@ def main():
     pyperclip.copy(translated)
     print()
     print('This message has been copied to the clipboard.')
+
+def keyIsValid(key):
+    keyList = list(key)
+    lettersList = list(LETTERS)
+    keyList.sort()
+    lettersList.sort()
+
+    return keyList == lettersList
+    
