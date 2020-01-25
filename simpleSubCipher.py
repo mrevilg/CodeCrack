@@ -34,4 +34,11 @@ def keyIsValid(key):
     lettersList.sort()
 
     return keyList == lettersList
-    
+
+def encryptMessage(key, message):
+    return translatedMessage(key, message, 'encrypt')
+
+def decryptMessage(key, message):
+    return translatedMessage(key, message, 'decrypt')
+
+def translatedMessage(key, message, mode):
