@@ -42,3 +42,12 @@ def decryptMessage(key, message):
     return translatedMessage(key, message, 'decrypt')
 
 def translatedMessage(key, message, mode):
+    translated = ''
+    charsA = LETTERS
+    charsB = key
+    if mode == 'decrypt':
+        # For Decrypting, we use the same code, just swap.
+        charsA, charsB = charsB, charsA
+
+    # Loop through each symbol in the message:
+    for symbol in message:
