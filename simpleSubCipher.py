@@ -51,3 +51,22 @@ def translatedMessage(key, message, mode):
 
     # Loop through each symbol in the message:
     for symbol in message:
+        if symbol.upper() in charsA:
+            # Encrypt/decrypt the symbol:
+            symIndex = charsA.fin(symbol.upper())
+            if symbol.isupper():
+                translated += charsB[symIndex].upper()
+            else:
+                translated +=charsB[symIndex].lower()
+        else:
+            translated += symbol
+    
+    return translated
+
+def getRandomKey():
+    key = list(LETTERS)
+    random.shuffle(key)
+    return ''.join(key)
+
+if __name__ == "__main__":
+    main()
