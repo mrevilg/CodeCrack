@@ -1,21 +1,15 @@
-
 import pyperclip, sys, random
 
 
 LETTERS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 
 def main():
-    myMessage = """If a man is offered a fact which goes against his instincts, 
-        he will scrutinize it closely, and unless the evidence is overwhelming, 
-        he will refuse to believe it. If, on the other hand, he is offered something 
-        which affords a reason for acting in accordance to his instincts, 
-        he will accept it even on the slightest evidence. 
-        The origin of myths is explained in this way. -Bertrand Russell"""
+    myMessage = 'If a man is offered a fact which goes against his instincts, he will scrutinize it closely, and unless the evidence is overwhelming, he will refuse to believe it. If, on the other hand, he is offered something which affords a reason for acting in accordance to his instincts, he will accept it even on the slightest evidence. The origin of myths is explained in this way. -Bertrand Russell'
     myKey = 'LFWOAYUISVKMNXPBDCRJTQEGHZ'
     myMode = 'encrypt' # Set to encrypt or decrypt
 
-    if keyIsValid(myKey):
-        sys.exit('There is an error in the key or symbol set.')
+    keyIsValid(myKey)
+    
     if myMode == 'encrypt':
         translated = encryptMessage(myKey, myMessage)
     elif myMode == 'decrypt':
@@ -32,8 +26,10 @@ def keyIsValid(key):
     lettersList = list(LETTERS)
     keyList.sort()
     lettersList.sort()
+    if keyList != lettersList:
+        sys.exit('There is an error in the key or symbol set.')
 
-    return keyList == lettersList
+   # return keyList == lettersList
 
 def encryptMessage(key, message):
     return translatedMessage(key, message, 'encrypt')
@@ -53,14 +49,13 @@ def translatedMessage(key, message, mode):
     for symbol in message:
         if symbol.upper() in charsA:
             # Encrypt/decrypt the symbol:
-            symIndex = charsA.fin(symbol.upper())
+            symIndex = charsA.find(symbol.upper())
             if symbol.isupper():
                 translated += charsB[symIndex].upper()
             else:
                 translated +=charsB[symIndex].lower()
         else:
             translated += symbol
-    
     return translated
 
 def getRandomKey():
@@ -68,5 +63,5 @@ def getRandomKey():
     random.shuffle(key)
     return ''.join(key)
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     main()
