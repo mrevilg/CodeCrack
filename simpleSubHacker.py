@@ -26,3 +26,9 @@ def main():
 def getBlankCipherLetterMapping():
     return {'A': [], 'B': [], 'C': [], 'D': [], 'E': [], 'F': [], 'G': [], 'H': [], 'I': [], 'J': [], 'K': [], 'L': [], 'M': [], 'N': [], 'O': [], 'P': [], 'Q': [], 'R': [], 'S': [], 'T': [], 'U': [], 'V': [], 'W': [], 'X': [], 'Y': [], 'Z': []}
 
+def addLettersToMapping(letterMapping, cipherWord, candidate):
+    for i in range(len(cipherWord)):
+        if candidate[i] not in letterMapping[cipherWord[i]]:
+            letterMapping[cipherWord[i]].append(candidate[i])
+
+def intersectMappings(mapA, MapB):
