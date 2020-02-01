@@ -13,7 +13,7 @@ def main():
 
     # Display the results to the user.
     print('Mapping:')
-    pprint.pprint(letterMapping)
+    print(letterMapping)
     print()
     print('Original ciphertext:')
     print(message)
@@ -22,3 +22,7 @@ def main():
     hackedMessage = decryptWithCipherletterMapping(message, letterMapping)
     pyperclip.copy(hackedMessage)
     print(hackedMessage)
+
+def getBlankCipherLetterMapping():
+    return {'A': [], 'B': [], 'C': [], 'D': [], 'E': [], 'F': [], 'G': [], 'H': [], 'I': [], 'J': [], 'K': [], 'L': [], 'M': [], 'N': [], 'O': [], 'P': [], 'Q': [], 'R': [], 'S': [], 'T': [], 'U': [], 'V': [], 'W': [], 'X': [], 'Y': [], 'Z': []}
+
