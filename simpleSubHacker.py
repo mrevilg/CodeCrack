@@ -32,3 +32,7 @@ def addLettersToMapping(letterMapping, cipherWord, candidate):
             letterMapping[cipherWord[i]].append(candidate[i])
 
 def intersectMappings(mapA, MapB):
+    intersectedMapping = getBlankCipherLetterMapping()
+    for letter in LETTERS:
+        if mapA[letter] == []:
+            
