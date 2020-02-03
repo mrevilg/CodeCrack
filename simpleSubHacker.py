@@ -35,4 +35,5 @@ def intersectMappings(mapA, MapB):
     intersectedMapping = getBlankCipherLetterMapping()
     for letter in LETTERS:
         if mapA[letter] == []:
-            
+            intersectedMapping[letter] = copy.deepcopy(mapB[letter])
+        elif
