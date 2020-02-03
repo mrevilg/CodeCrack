@@ -36,4 +36,13 @@ def intersectMappings(mapA, MapB):
     for letter in LETTERS:
         if mapA[letter] == []:
             intersectedMapping[letter] = copy.deepcopy(mapB[letter])
-        elif
+        elif mapB[letter] == []:
+            intersectedMapping[letter] = copy.deepcopy(mapA[letter])
+        else:
+            for mappedLetter in mapA[letter]:
+                if mappedLetter in mapB[letter]:
+                    intersectedMapping[letter].append(mappedLetter)
+
+    return intersectedMapping
+
+def removeSolvedLettersFromMapping(letterMapping):
