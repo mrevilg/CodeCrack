@@ -46,3 +46,10 @@ def intersectMappings(mapA, MapB):
     return intersectedMapping
 
 def removeSolvedLettersFromMapping(letterMapping):
+    loopAgain = True
+    while loopAgain:
+        loopAgain = False
+        solvedLetters = []
+        for cipherLetter in LETTERS:
+            if len(letterMapping[cipherLetter]) == 1:
+                solvedLetters.append(letterMapping[cipherLetter][0])
