@@ -53,3 +53,11 @@ def removeSolvedLettersFromMapping(letterMapping):
         for cipherLetter in LETTERS:
             if len(letterMapping[cipherLetter]) == 1:
                 solvedLetters.append(letterMapping[cipherLetter][0])
+        
+        for cipherLetter in LETTERS:
+            for s in solvedLetters:
+                if len(letterMapping[cipherLetter]) != 1 and s in letterMapping[cipherLetter]:
+                        letterMapping[cipherLetter].remove(s)
+                        if len(letterMapping[cipherLetter]) == 1:
+                            loopAgain = True
+    return letterMapping
