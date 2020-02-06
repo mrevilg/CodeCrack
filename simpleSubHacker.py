@@ -61,3 +61,11 @@ def removeSolvedLettersFromMapping(letterMapping):
                         if len(letterMapping[cipherLetter]) == 1:
                             loopAgain = True
     return letterMapping
+
+def hackSimpleSub(message):
+    intersectedMap = getBlankCipherLetterMapping()
+    cipherwordlist = nonLettersOrSpacePattern.sub('',message.upper()).split()
+    for cipherword in cipherwordlist:
+        candidateMap = getBlankCipherLetterMapping()
+
+        wordPattern = makeWordPatterns.getWordPattern(cipherword)
