@@ -69,3 +69,11 @@ def hackSimpleSub(message):
         candidateMap = getBlankCipherLetterMapping()
 
         wordPattern = makeWordPatterns.getWordPattern(cipherword)
+        if wordPattern not in wordPatterns.allPatterns:
+        for candidate in wordPatterns.allPatterns[wordPattern]:
+            addLettersToMapping(candidateMap, cipherWord, candidate)
+        intersectedMap = intersectMappings(intersectedMap, candidateMap)
+
+    return removeSolvedLettersFromMapping(intersectedMap)
+
+def decryptWithCipherletterMapping(ciphertext, letterMapping):
