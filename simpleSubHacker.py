@@ -64,12 +64,13 @@ def removeSolvedLettersFromMapping(letterMapping):
 
 def hackSimpleSub(message):
     intersectedMap = getBlankCipherLetterMapping()
-    cipherwordlist = nonLettersOrSpacePattern.sub('',message.upper()).split()
-    for cipherword in cipherwordlist:
+    cipherwordList = nonLettersOrSpacePattern.sub('',message.upper()).split()
+    for cipherword in cipherwordList:
         candidateMap = getBlankCipherLetterMapping()
 
         wordPattern = makeWordPatterns.getWordPattern(cipherword)
         if wordPattern not in wordPatterns.allPatterns:
+            continue
         for candidate in wordPatterns.allPatterns[wordPattern]:
             addLettersToMapping(candidateMap, cipherWord, candidate)
         intersectedMap = intersectMappings(intersectedMap, candidateMap)
@@ -77,3 +78,16 @@ def hackSimpleSub(message):
     return removeSolvedLettersFromMapping(intersectedMap)
 
 def decryptWithCipherletterMapping(ciphertext, letterMapping):
+    key = ['x'] * len(LETTERS)
+    for cipherletter in LETTERS:
+        if len(letterMapping[cipherletter]) == 1:
+            keyIndex = LETTERS.find(letterMapping[cipherletter][0])
+            key[keyIndex] = cipherletter
+        else:
+            ciphertext = ciphertext.replace(cipherletter.lower(), '_')
+            ciphertext = ciphertext.replace(cipherletter.upper(), '_')
+    key = ''.join(key)
+
+
+if __name__ == '__main__':
+    main()
