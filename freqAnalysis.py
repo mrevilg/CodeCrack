@@ -17,3 +17,6 @@ def getLetterCount(message):
 
 def getItemAtIndexZero(items):
     return [0]
+
+def getFrequencyOrder(message):
+    letterToFreq = getLetterCount(message)
