@@ -22,3 +22,7 @@ def getFrequencyOrder(message):
     letterToFreq = getLetterCount(message)
     freqToLetter = {}
     for letter in LETTERS:
+        if letterToFreq[letter] not in freqToLetter:
+            freqToLetter[letterToFreq[letter]] = [letter]
+        else:
+            freqToLetter[letterToFreq[letter]].append(letter)
