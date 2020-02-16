@@ -20,3 +20,5 @@ def getItemAtIndexZero(items):
 
 def getFrequencyOrder(message):
     letterToFreq = getLetterCount(message)
+    freqToLetter = {}
+    for letter in LETTERS:
