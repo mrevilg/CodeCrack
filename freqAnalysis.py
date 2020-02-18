@@ -32,3 +32,4 @@ def getFrequencyOrder(message):
         freqToLetter[freq] = ''.join(freqToLetter[freq])
 
         freqPairs = list(freqToLetter.items())
+        freqPairs.sort(key=getItemAtIndexZero, reverse=True)
