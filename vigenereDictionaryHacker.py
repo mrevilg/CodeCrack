@@ -14,3 +14,8 @@ def main():
 
 def hackVigenereDictionary(ciphertext):
     fo = open('dictionary.txt')
+    words = fo.readlines()
+    fo.close
+
+    for word in lines:
+        word = word.strip()
