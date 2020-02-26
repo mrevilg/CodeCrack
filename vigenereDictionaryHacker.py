@@ -19,3 +19,6 @@ def hackVigenereDictionary(ciphertext):
 
     for word in lines:
         word = word.strip()
+        decryptedText = vigenereCipher.decryptMessage(word, ciphertext)
+        if detectEnglish.isEnglish(decryptedText, wordPercentage=40):
+            print()
