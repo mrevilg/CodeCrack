@@ -22,3 +22,10 @@ def hackVigenereDictionary(ciphertext):
         decryptedText = vigenereCipher.decryptMessage(word, ciphertext)
         if detectEnglish.isEnglish(decryptedText, wordPercentage=40):
             print()
+            print('Possible encryption break:')
+            print('Key ' + str(word + ': ' + decryptedText[:100]))
+            print()
+            print('Enter D for done, or press Enter to continue breaking:')
+
+            response = input('> ')
+            
