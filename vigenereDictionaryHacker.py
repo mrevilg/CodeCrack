@@ -28,4 +28,10 @@ def hackVigenereDictionary(ciphertext):
             print('Enter D for done, or press Enter to continue breaking:')
 
             response = input('> ')
+
+            if response.upper().startswith('D'):
+                return decryptedText
+
+if __name__ == '__main__':
+    main()
             
