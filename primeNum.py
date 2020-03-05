@@ -10,3 +10,6 @@ def isPrimeTrialDiv(num):
         if num % i == 0:
             return False
     return True
+
+def primeSieve(sieveSize):
+    sieve = [True] * sieveSize
