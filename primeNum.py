@@ -12,4 +12,7 @@ def isPrimeTrialDiv(num):
     return True
 
 def primeSieve(sieveSize):
+    
     sieve = [True] * sieveSize
+    sieve[0] = False
+    sieve[1] = False
