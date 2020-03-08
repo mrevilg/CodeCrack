@@ -16,3 +16,6 @@ def primeSieve(sieveSize):
     sieve = [True] * sieveSize
     sieve[0] = False
     sieve[1] = False
+
+    for i in range(2, int(math.sqrt(sieveSize)) + 1):
+        pointer = i * 2
