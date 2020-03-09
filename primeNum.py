@@ -24,3 +24,10 @@ def primeSieve(sieveSize):
             pointer += i
         
         primes = []
+        for i in range(sieveSize):
+            if sieve[i] == True:
+                primes.append(i)
+
+        return primes
+
+def rabinMiller(num):
