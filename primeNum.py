@@ -31,3 +31,10 @@ def primeSieve(sieveSize):
         return primes
 
 def rabinMiller(num):
+    if num % 2 == 0 or num <2:
+        return False
+    if num == 3:
+        return True
+    s = num - 1
+    t = 0
+    while s % 2 == 0:
