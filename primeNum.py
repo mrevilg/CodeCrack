@@ -38,3 +38,7 @@ def rabinMiller(num):
     s = num - 1
     t = 0
     while s % 2 == 0:
+        s = s // 2
+        t += 1
+    for trials in range(5):
+        a = random.randrange(2, num - 1)
