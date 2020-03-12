@@ -42,3 +42,4 @@ def rabinMiller(num):
         t += 1
     for trials in range(5):
         a = random.randrange(2, num - 1)
+        v = pow(a, s, num)
