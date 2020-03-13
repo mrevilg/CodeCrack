@@ -43,3 +43,12 @@ def rabinMiller(num):
     for trials in range(5):
         a = random.randrange(2, num - 1)
         v = pow(a, s, num)
+        if v != 1:
+            i = 0
+            while v != (num - 1):
+                if i == t - 1:
+                    return False
+                else:
+                    i = i + 1
+                    v = (v ** 2) % num
+    return True
