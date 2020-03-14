@@ -52,3 +52,9 @@ def rabinMiller(num):
                     i = i + 1
                     v = (v ** 2) % num
     return True
+
+LOW_PRIMES = primeSieve(100)
+
+def isPrime(num):
+    if (num < 2):
+        return False
