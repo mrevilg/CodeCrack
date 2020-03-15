@@ -58,3 +58,12 @@ LOW_PRIMES = primeSieve(100)
 def isPrime(num):
     if (num < 2):
         return False
+
+    for prime in LOW_PRIMES:
+        if (num % prime == 0):
+            return False
+
+    return rabinMiller(num)
+
+def generateLargePrime(keysize=1024):
+    
