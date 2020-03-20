@@ -12,3 +12,9 @@ def generateKey(keysize):
     q = 0
 
     print('Generating p prime...')
+    while p == q:
+        p = primeNum.generateLargePrime(keysize)
+        q = primeNum.generateLargePrime(keysize)
+    n = p * q
+        
+        
