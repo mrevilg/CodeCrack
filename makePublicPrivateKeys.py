@@ -16,5 +16,8 @@ def generateKey(keysize):
         p = primeNum.generateLargePrime(keysize)
         q = primeNum.generateLargePrime(keysize)
     n = p * q
+
+    print('Generating e that is relatively prime to (p-1)*(q-1)...')
+    while True:
         
         
