@@ -25,4 +25,14 @@ def generateKey(keysize):
 
     print('Calculating d that is mod inverse of e...')
     d = cryptomath.findModInverse(e, (p - 1) * (q - 1))    
+
+    publicKey = (n,e)
+    privateKey = (n,d)
+
+    print('Public key:', publicKey)
+    print('Private key:', privateKey)
+
+    return (publicKey, privateKey)
+
+
         
