@@ -19,5 +19,7 @@ def generateKey(keysize):
 
     print('Generating e that is relatively prime to (p-1)*(q-1)...')
     while True:
+        e = random.randrange(2 ** (keysize - 1), 2 ** (keysize))
+        if cryptomath.gcd(e, (p - 1) * (q - 1))
         
         
