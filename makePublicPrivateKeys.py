@@ -35,5 +35,8 @@ def generateKey(keysize):
     return (publicKey, privateKey)
 
 def makeKeyFiles(name, keySize):
-    
+    if os.path.exists('%s_pubkey.txt' % (name)) or
+    os.path.exists('%s_privkey.txt' % (name)):
+    sys.exit()
+
         
