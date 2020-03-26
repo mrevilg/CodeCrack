@@ -42,5 +42,6 @@ def makeKeyFiles(name, keySize):
     publicKey, privateKey = generateKey(keySize)
 
     print()
+    print('The public key is a %s and a %s digital number.' % (len(str(publicKey[0])), len(str(publicKey[1]))))
     print()
         
