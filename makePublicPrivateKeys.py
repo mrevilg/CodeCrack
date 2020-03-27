@@ -46,4 +46,5 @@ def makeKeyFiles(name, keySize):
     print('writing public key to file %s_pubkey.txt...' % (name))
     fo = open('%s_pubkey.txt' % (name), 'w')
     fo.write('%s,%s,%s' % (keySize, publicKey[0], publicKey[1]))
+    fo.close()
         
