@@ -54,3 +54,6 @@ def makeKeyFiles(name, keySize):
     fo = open('%s_pubkey.txt' % (name), 'w')
     fo.write('%s,%s,%s' % (keySize, publicKey[0], publicKey[1]))
     fo.close()   
+
+if __name__ == '__main__':
+    main()
